@@ -34,10 +34,10 @@ export default function PwaInstallPrompt() {
       <img
         src="./favicon-32x32.png"
         alt="App Logo"
-        className="w-8 h-8 rounded-full animate-pulse"
+        className="bg-white w-8 h-8 rounded-full animate-pulse"
       />
       <div className="ml-3 flex-1 text-sm font-medium">
-        Install <span className="font-semibold">Garden Dot</span> App to explore offline games and more.
+        Install <span className="font-semibold">Garden Dot</span> Light App to explore offline plant game and more.
       </div>
       <button
         onClick={handleInstallClick}
