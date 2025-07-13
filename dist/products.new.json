@@ -1,0 +1,72 @@
+[
+  {
+    "images": [
+      "https://lh3.googleusercontent.com/d/1pLQB1LA_i6IGiOlxsWHHuCtnKvNzQ0bA=w800",
+      "https://lh3.googleusercontent.com/d/1-8RXUB2_FLMK6vNEO0y4rtZESzJNDAGV=w800"
+    ],
+    "id": 1,
+    "name": "Gerbera",
+    "description": "Beautiful flower plants",
+    "price": 199,
+    "category": "Flowers",
+    "image1_name": "ai.png",
+    "image2_name": "gglogo",
+    "Update Website": false
+  },
+  {
+    "images": [
+      "https://lh3.googleusercontent.com/d/1-8RXUB2_FLMK6vNEO0y4rtZESzJNDAGV=w800",
+      "https://lh3.googleusercontent.com/d/1pLQB1LA_i6IGiOlxsWHHuCtnKvNzQ0bA=w800"
+    ],
+    "id": 2,
+    "name": "Garden Tools",
+    "description": "Set of 2 gardening tools",
+    "price": 499,
+    "category": "Flowers",
+    "image1_name": "gglogo",
+    "image2_name": "ai.png",
+    "Update Website": false
+  },
+  {
+    "images": [
+      "https://lh3.googleusercontent.com/d/1pLQB1LA_i6IGiOlxsWHHuCtnKvNzQ0bA=w800",
+      "https://lh3.googleusercontent.com/d/1-8RXUB2_FLMK6vNEO0y4rtZESzJNDAGV=w800"
+    ],
+    "id": 3,
+    "name": "Adenium plants",
+    "description": "desert rose",
+    "price": 69,
+    "category": "Cactus",
+    "image1_name": "ai.png",
+    "image2_name": "gglogo",
+    "Update Website": false
+  },
+  {
+    "images": [
+      "https://lh3.googleusercontent.com/d/1-8RXUB2_FLMK6vNEO0y4rtZESzJNDAGV=w800",
+      "https://lh3.googleusercontent.com/d/1pLQB1LA_i6IGiOlxsWHHuCtnKvNzQ0bA=w800"
+    ],
+    "id": 4,
+    "name": "Arabicum",
+    "description": "aravicum",
+    "price": 787,
+    "category": "Fruits",
+    "image1_name": "gglogo",
+    "image2_name": "ai.png",
+    "Update Website": false
+  },
+  {
+    "images": [
+      "https://lh3.googleusercontent.com/d/1-8RXUB2_FLMK6vNEO0y4rtZESzJNDAGV=w800",
+      "https://lh3.googleusercontent.com/d/1jvpvjbQSIxI0zIOE1oku_Ub-Vth6gyla=w800"
+    ],
+    "id": "sku67",
+    "name": "Coriander seeds",
+    "description": "fresh seeds ",
+    "price": 5,
+    "category": "Seeds",
+    "image1_name": "gglogo",
+    "image2_name": "plant.png",
+    "Update Website": false
+  }
+]

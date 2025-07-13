@@ -1,0 +1,44 @@
+import { Menu, ShoppingCart, Leaf, Sun } from 'lucide-react';
+
+export default function Header({ count, onCartClick, onMenuClick }) {
+  return (
+    <header className="bg-gradient-to-r from-cyan-800 via-green-900 to-cyan-800 text-white px-5 py-3 shadow-md rounded-b-3xl flex items-center justify-between border-b border-green-700">
+      
+      {/* Left: Menu Button */}
+      <button
+        onClick={onMenuClick}
+        className="text-white hover:text-emerald-300 transition"
+        aria-label="Open menu"
+      >
+        <Menu size={26} />
+      </button>
+
+      {/* Center: Logo */}
+      <div className="text-2xl font-extrabold flex items-center gap-1 tracking-widest">
+        <span className="bg-white text-emerald-800 rounded-full w-8 h-8 flex items-center justify-center font-mono shadow-md">
+          G
+        </span>
+        <span className="text-cyan-300 animate-bounce text-3xl">.</span>
+      </div>
+
+      {/* Right: Cart and Theme */}
+      <div className="relative flex items-center gap-4">
+        {/* <Sun className="text-yellow-400" size={20} /> */}
+
+        <button
+          onClick={onCartClick}
+          className="relative flex items-center hover:text-cyan-200 transition"
+          aria-label="Open cart"
+        >
+          <ShoppingCart size={22} />
+          <Leaf size={16} className="ml-1 text-lime-300" />
+          {count > 0 && (
+            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded-full shadow-md font-bold">
+              {count}
+            </span>
+          )}
+        </button>
+      </div>
+    </header>
+  );
+}
