@@ -8,17 +8,17 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico','favicon-32.png','favicon-48.png','favicon-64.png', 'icon-192.png', 'icon-512.png'],
+      includeAssets: ['favicon.ico','favicon-16x16.png','favicon-32x32.png','android-chrome-192x192.png', 'android-chrome-512x512.png'],
       manifest: {
-        name: 'Garden dot',
-        short_name: 'Garden dot',
+        name: 'Garden Dot',
+        short_name: 'Garden Dot',
         start_url: '/',
         display: 'standalone',
         background_color: '#f0fdf4',
-        theme_color: '#047857',
+        theme_color: '#87CEEB',
         icons: [
-          { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }
+          { src: 'android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+          { src: 'android-chrome-512x5122.png', sizes: '512x512', type: 'image/png' }
         ]
       }
     })

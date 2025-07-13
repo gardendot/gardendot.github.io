@@ -5,13 +5,13 @@
       "https://lh3.googleusercontent.com/d/1-8RXUB2_FLMK6vNEO0y4rtZESzJNDAGV=w800"
     ],
     "id": 1,
-    "name": "Gerbera",
+    "name": "RainLily",
     "description": "Beautiful flower plants",
-    "price": 199,
+    "price": 299,
     "category": "Flowers",
     "image1_name": "ai.png",
     "image2_name": "gglogo",
-    "Update Website": false
+    "Push Data to Website": false
   },
   {
     "images": [
@@ -19,13 +19,13 @@
       "https://lh3.googleusercontent.com/d/1pLQB1LA_i6IGiOlxsWHHuCtnKvNzQ0bA=w800"
     ],
     "id": 2,
-    "name": "Garden Tools",
+    "name": "Gardening Tools",
     "description": "Set of 2 gardening tools",
     "price": 499,
     "category": "Flowers",
     "image1_name": "gglogo",
     "image2_name": "ai.png",
-    "Update Website": false
+    "Push Data to Website": ""
   },
   {
     "images": [
@@ -39,7 +39,7 @@
     "category": "Cactus",
     "image1_name": "ai.png",
     "image2_name": "gglogo",
-    "Update Website": false
+    "Push Data to Website": ""
   },
   {
     "images": [
@@ -53,7 +53,7 @@
     "category": "Fruits",
     "image1_name": "gglogo",
     "image2_name": "ai.png",
-    "Update Website": false
+    "Push Data to Website": ""
   },
   {
     "images": [
@@ -67,6 +67,20 @@
     "category": "Seeds",
     "image1_name": "gglogo",
     "image2_name": "plant.png",
-    "Update Website": false
+    "Push Data to Website": ""
+  },
+  {
+    "images": [
+      "https://lh3.googleusercontent.com/d/1pLQB1LA_i6IGiOlxsWHHuCtnKvNzQ0bA=w800"
+    ],
+    "id": "sku-agave",
+    "name": "Agave",
+    "description": "",
+    "price": 981,
+    "category": "",
+    "image1_name": "ai.png",
+    "image2_name": "",
+    "image2_url": "",
+    "Push Data to Website": ""
   }
 ]
