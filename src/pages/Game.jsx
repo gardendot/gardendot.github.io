@@ -67,7 +67,7 @@ export default function MemoryGame() {
   };
 
   const handleShare = async () => {
-    const shareText = `🌿 I completed the Plant Memory Match Game in ${moves} moves! Try it here: ${window.location.href}`
+    const shareText = `🌿 I completed the Plant Memory Match Game in ${moves} moves! Try it here: `
     if (navigator.share) {
       try {
         await navigator.share({
@@ -86,12 +86,12 @@ export default function MemoryGame() {
   }
 
   return (
-    <>
+    <div     className="min-h-screen bg-gradient-to-b from-cyan-900 to-emerald-800  ">
     
-
-    <div className="min-h-screen bg-gradient-to-b from-cyan-900 to-emerald-800 p-0 text-white text-center">
-      <Header  hideMenu hideCart />
-      <h1 className="text-3xl font-bold my-4">🌼 Plant Memory Match</h1>
+<Header  hideMenu hideCart />
+    <div className=" p-4 text-white text-center">
+      
+      <h1 className="text-2xl font-bold my-4">🌼 Plant Memory Match</h1>
       <p className="mb-2 text-sm">Moves: {moves}</p>
 
       <div className="grid grid-cols-4 gap-3 max-w-md mx-auto mb-6">
@@ -131,8 +131,9 @@ export default function MemoryGame() {
           <li>Try to match all pairs in the fewest moves!</li>
         </ul>
       </div>
-      <Footer/>
+     
     </div>
-    </>
+     <Footer/>
+    </div>
   );
 }
