@@ -9,6 +9,15 @@ import GrowYourPlant from './pages/GrowYourPlant';
 import Game from './pages/Game'
 import './styles/index.css';
 
+// index.jsx or App.jsx
+const params = new URLSearchParams(window.location.search);
+const redirectPath = params.get('redirect');
+
+if (redirectPath) {
+  window.history.replaceState(null, '', redirectPath);
+}
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
