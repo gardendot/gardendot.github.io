@@ -1,30 +1,34 @@
-import { Menu, ShoppingCart, Leaf, Sun } from 'lucide-react';
+import { Menu, ShoppingCart, Leaf } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export default function Header({ count, onCartClick, onMenuClick }) {
+export default function Header({ count = 0, onCartClick, onMenuClick, hideMenu = false, hideCart = false }) {
   return (
     <header className="bg-gradient-to-r from-cyan-800 via-green-900 to-cyan-800 text-white px-5 py-3 shadow-md rounded-b-3xl flex items-center justify-between border-b border-green-700">
       
       {/* Left: Menu Button */}
-      <button
-        onClick={onMenuClick}
-        className="text-white hover:text-emerald-300 transition"
-        aria-label="Open menu"
-      >
-        <Menu size={26} />
-      </button>
+      {!hideMenu ? (
+        <button
+          onClick={onMenuClick}
+          className="text-white hover:text-emerald-300 transition"
+          aria-label="Open menu"
+        >
+          <Menu size={26} />
+        </button>
+      ) : (
+        <div className="w-6" /> // Spacer if no menu button
+      )}
 
       {/* Center: Logo */}
-      <div className="text-2xl font-extrabold flex items-center gap-1 tracking-widest">
-        <span className="bg-white text-emerald-800 rounded-full w-8 h-8 flex items-center justify-center font-mono shadow-md">
+      <Link to="/" className="text-2xl font-extrabold flex items-center gap-1 tracking-widest group">
+        <span className="bg-white text-emerald-800 rounded-full w-8 h-8 flex items-center justify-center font-mono shadow-md transition-transform group-hover:scale-105">
           G
         </span>
         <span className="text-cyan-300 animate-bounce text-3xl">.</span>
-      </div>
+      </Link>
 
-      {/* Right: Cart and Theme */}
+      {/* Right: Cart */}
       <div className="relative flex items-center gap-4">
-        {/* <Sun className="text-yellow-400" size={20} /> */}
-
+        {!hideCart ? (
         <button
           onClick={onCartClick}
           className="relative flex items-center hover:text-cyan-200 transition"
@@ -38,6 +42,12 @@ export default function Header({ count, onCartClick, onMenuClick }) {
             </span>
           )}
         </button>
+      ) : (
+        <div className="w-6" /> 
+      )}
+
+
+        
       </div>
     </header>
   );

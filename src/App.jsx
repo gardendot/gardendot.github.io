@@ -8,7 +8,9 @@ import Loader from './components/Loader';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import PwaInstallPrompt from './components/PwaInstallPrompt'
+import OfflineBanner from './components/OfflineBanner';
 import { trackGAEvent } from './components/GA';
+
 
 //import products from './data/products.json';
 
@@ -229,6 +231,7 @@ export default function App() {
               ))}
           </div>
         )}
+        <OfflineBanner />
 
       </main>
 

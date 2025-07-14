@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import MemoryCard from './MemoryCard';
+import { Share2 } from 'lucide-react'
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const emojis = ['🌻', '🌸', '🌼', '🌹', '🌺', '🌷', '🌱', '🌵'];
 
@@ -63,9 +66,32 @@ export default function MemoryGame() {
     setFlipped([]);
   };
 
+  const handleShare = async () => {
+    const shareText = `🌿 I completed the Plant Memory Match Game in ${moves} moves! Try it here: ${window.location.href}`
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Plant Memory Match on G.',
+          text: shareText,
+          url: window.location.href
+        })
+      } catch (err) {
+        alert('Sharing failed 😢')
+      }
+    } else {
+      // fallback
+      navigator.clipboard.writeText(shareText)
+      alert('Game result copied! Paste it to share. ✅')
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-900 to-green-800 p-4 text-white text-center">
-      <h1 className="text-3xl font-bold mb-4">🌼 Plant Memory Match</h1>
+    <>
+    
+
+    <div className="min-h-screen bg-gradient-to-b from-cyan-900 to-emerald-800 p-0 text-white text-center">
+      <Header  hideMenu hideCart />
+      <h1 className="text-3xl font-bold my-4">🌼 Plant Memory Match</h1>
       <p className="mb-2 text-sm">Moves: {moves}</p>
 
       <div className="grid grid-cols-4 gap-3 max-w-md mx-auto mb-6">
@@ -80,11 +106,33 @@ export default function MemoryGame() {
       </div>
 
       {won && (
-        <div className="bg-white text-green-700 px-4 py-2 rounded shadow font-bold">
+        <div className="bg-white text-cyan-700 px-4 py-2 rounded shadow font-bold flex flex-col gap-4 items-center">
           🎉 You matched all plants in {moves} moves!
           <button onClick={resetGame} className="ml-4 underline text-cyan-600">Play Again</button>
+          <button
+            onClick={handleShare}
+            className="flex justify-center items-center gap-1 bg-green-600 text-white px-4 py-1.5 rounded hover:bg-green-700 transition lg:hidden"
+          >
+            <Share2 size={18} /> Share Score
+          </button>
         </div>
       )}
+
+
+
+      <hr className="my-6 border-gray-400 opacity-30" />
+
+      <div className="max-w-3xl mx-auto  text-left text-sm text-white-500 dark:text-white-400 p-4 px-8   leading-relaxed">
+        <h3 className="font-semibold text-base text-cyan-600 mb-1">📘 How to Play</h3>
+        <ul className="list-disc list-inside">
+          <li>Tap two tiles to flip them over.</li>
+          <li>If they match, they stay visible.</li>
+          <li>If not, they flip back.</li>
+          <li>Try to match all pairs in the fewest moves!</li>
+        </ul>
+      </div>
+      <Footer/>
     </div>
+    </>
   );
 }
