@@ -94,7 +94,7 @@ export default function MemoryGame() {
       <h1 className="text-2xl font-bold my-4">🌼 Plant Memory Match</h1>
       <p className="mb-2 text-sm">Moves: {moves}</p>
 
-      <div className="grid grid-cols-4 gap-3 max-w-md mx-auto mb-6">
+      <div className="grid grid-cols-4 gap-3 max-w-md mx-auto mb-6" style={{justifyItems: 'center'}}>
         {cards.map((card, index) => (
           <MemoryCard
             key={card.id}
