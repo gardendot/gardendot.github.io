@@ -1,33 +1,92 @@
 backend:
-  name: github
-  repo: gardendot/gardendot.github.io
-  branch: main
+  name: git-gateway
+  branch: main # or master, depending on your default branch
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "public/assets" # Where uploaded images will be stored
+public_folder: "/assets" # Public path to the media folder
 
 collections:
-  - label: "Products"
-    name: "products"
-    folder: "content/products"
+  - name: "products"
+    label: "Products"
+    folder: "content/products" # Folder where product markdown files will be stored
     create: true
-    slug: "{{sku}}"
+    slug: "{{fields.id}}" # Use the SKU/ID as the filename
     fields:
-      - { label: "SKU", name: "sku", widget: "string", required: true }
-      - { label: "Title", name: "title", widget: "string", required: true }
-      - { label: "Description", name: "description", widget: "text", required: true }
+      - label: "SKU/ID"
+        name: "id"
+        widget: "string"
+        hint: "Unique product identifier (e.g., plant001)"
+        pattern: ['^[a-zA-Z0-9]+$', "Must contain only letters and numbers"]
+      
+      - label: "Product Name"
+        name: "name"
+        widget: "string"
+        hint: "Display name of the product"
+      
       - label: "Category"
         name: "category"
         widget: "select"
         options:
-          - { label: "Flowers", value: "Flowers" }
-          - { label: "Herbs", value: "Herbs" }
-          - { label: "Pots", value: "Pots" }
-          - { label: "Tools", value: "Tools" }
-      - label: "Images"
+          - label: "Flowers"
+            value: "Flowers"
+          - label: "Fruits"
+            value: "Fruits"
+          - label: "Seeds"
+            value: "Seeds"
+        default: "Flowers"
+      
+      - label: "Price"
+        name: "price"
+        widget: "number"
+        value_type: "int"
+        min: 0
+        hint: "Price in your currency (e.g., 249)"
+      
+      - label: "Product Images"
         name: "images"
         widget: "list"
+        summary: "{{fields.image}}"
         field:
-          label: Image
-          name: image
-          widget: image
+          label: "Image"
+          name: "image"
+          widget: "image"
+          allow_multiple: false
+        hint: "Upload multiple images for the product"
+        min: 1
+        max: 10
+      
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        hint: "Product description and details"
+      
+      - label: "Featured"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Mark as featured product (optional)"
+      
+      - label: "In Stock"
+        name: "in_stock"
+        widget: "boolean"
+        default: true
+        hint: "Product availability status"
+
+# Optional: Site settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "config/settings.yml"
+        fields:
+          - label: "Site Title"
+            name: "title"
+            widget: "string"
+          - label: "Site Description"
+            name: "description"
+            widget: "text"
+          - label: "Contact Email"
+            name: "email"
+            widget: "string"
