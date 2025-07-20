@@ -1,3 +1,11 @@
+backend:
+  name: github
+  repo: gardendot/gardendot.github.io
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
 collections:
   - label: "Products"
     name: "products"
@@ -19,6 +27,7 @@ collections:
       - label: "Images"
         name: "images"
         widget: "list"
-        allow_add: true
-        fields:
-          - { label: "Image", name: "image", widget: "image" }
+        field:
+          label: Image
+          name: image
+          widget: image
