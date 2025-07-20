@@ -1,0 +1,24 @@
+collections:
+  - label: "Products"
+    name: "products"
+    folder: "content/products"
+    create: true
+    slug: "{{sku}}"
+    fields:
+      - { label: "SKU", name: "sku", widget: "string", required: true }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "text", required: true }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Flowers", value: "Flowers" }
+          - { label: "Herbs", value: "Herbs" }
+          - { label: "Pots", value: "Pots" }
+          - { label: "Tools", value: "Tools" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        allow_add: true
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
