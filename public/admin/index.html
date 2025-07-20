@@ -6,12 +6,100 @@
   <title>Content Manager</title>
 </head>
 <body>
+  <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  
+  <!-- Custom configuration -->
+  <script>
+    // Debug configuration - try test-repo backend first
+    CMS.init({
+      config: {
+        backend: {
+          name: 'test-repo'
+        },
+        media_folder: 'public/assets',
+        public_folder: '/assets',
+        collections: [
+          {
+            name: 'products',
+            label: 'Products',
+            folder: 'content/products',
+            create: true,
+            slug: '{{fields.id}}',
+            fields: [
+              {
+                label: 'SKU/ID',
+                name: 'id',
+                widget: 'string',
+                hint: 'Unique product identifier (e.g., plant001)',
+                pattern: ['^[a-zA-Z0-9]+$', 'Must contain only letters and numbers']
+              },
+              {
+                label: 'Product Name',
+                name: 'name',
+                widget: 'string',
+                hint: 'Display name of the product'
+              },
+              {
+                label: 'Category',
+                name: 'category',
+                widget: 'select',
+                options: [
+                  { label: 'Flowers', value: 'Flowers' },
+                  { label: 'Fruits', value: 'Fruits' },
+                  { label: 'Seeds', value: 'Seeds' }
+                ],
+                default: 'Flowers'
+              },
+              {
+                label: 'Price',
+                name: 'price',
+                widget: 'number',
+                value_type: 'int',
+                min: 0,
+                hint: 'Price in your currency (e.g., 249)'
+              },
+              {
+                label: 'Product Images',
+                name: 'images',
+                widget: 'list',
+                summary: '{{fields.image}}',
+                field: {
+                  label: 'Image',
+                  name: 'image',
+                  widget: 'image',
+                  allow_multiple: false
+                },
+                hint: 'Upload multiple images for the product',
+                min: 1,
+                max: 10
+              },
+              {
+                label: 'Description',
+                name: 'description',
+                widget: 'text',
+                hint: 'Product description and details'
+              },
+              {
+                label: 'Featured',
+                name: 'featured',
+                widget: 'boolean',
+                default: false,
+                required: false,
+                hint: 'Mark as featured product (optional)'
+              },
+              {
+                label: 'In Stock',
+                name: 'in_stock',
+                widget: 'boolean',
+                default: true,
+                hint: 'Product availability status'
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
-
-<script>
-  CMS.init({
-    config: '/config/pages.yml'
-  })
-</script>
